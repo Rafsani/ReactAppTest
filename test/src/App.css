@@ -206,5 +206,15 @@ img {
   justify-content: center;
   color: blueviolet;
 
+
 }
 
+.loginForm {
+  padding-top: 5rem;
+  border-style:double;
+  border-color: rgb(156, 184, 207);
+  border-radius: 15px;
+  border-width: 2px;
+  background-color: rgb(228, 242, 255);
+  width: 3rem;
+}

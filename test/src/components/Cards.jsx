@@ -35,28 +35,30 @@ class Cards extends Component {
 
 
 
-    render(){
+    render()
+  {
     return (
       
         <div>
-<CardDeck >
-      {Items.map((product,index) => (
-        
-<Link className="CardLinks" to = "/product/" image={product.Image} > 
-<Card key={index} >
-    <Card.Img variant="top" src={product.Image} alt="..."/>
-    <Card.Body className= 'element'>
-     
-      <Card.Title>{product.ProductName}</Card.Title>
-      <Card.Text>
-        {product.Description}
-      </Card.Text>
-    </Card.Body>
-    <Card.Footer>
-      <small className="text-muted">Price: {product.ProductPrice}</small>৳
-    </Card.Footer>
-  </Card>
-  </Link>
+        <CardDeck >
+              {Items.map((product,index) => (
+                
+        <Link className="CardLinks" to = {`/product/${product._id}`}   > 
+        <Card key={index} >
+          <p>{product._id}</p>
+            <Card.Img variant="top" src={`/images/${product.Image}`} alt="..."/>
+            <Card.Body className= 'element'>
+            
+              <Card.Title>{product.ProductName}</Card.Title>
+              <Card.Text>
+                {product.Description}
+              </Card.Text>
+            </Card.Body>
+            <Card.Footer>
+              <small className="text-muted">Price: {product.ProductPrice}</small>৳
+            </Card.Footer>
+          </Card>
+          </Link>
 
       ))}
 

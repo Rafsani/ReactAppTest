@@ -15,6 +15,18 @@ const getAllProducts = async  (req, res) => {
     }
 }
 
+const getProduct = async (req,res) =>{
+    try {
+        const productdata = await Product.findById(req.params.id);
+        res.status(200).json(productdata);
+
+        console.log(productdata);
+    }
+    catch (e) {
+        console.log(e);
+    }
+}
+
 
 
 const addProducts =  ( req,res) => {
@@ -27,7 +39,8 @@ const addProducts =  ( req,res) => {
             ProductName: req.body.ProductName,
             Description: req.body.Description,
             ProductPrice: req.body.ProductPrice,
-            Image: "./images/" + req.file.originalname,
+            //Image: "./images/" + req.file.originalname,
+            Image: "" + req.file.originalname,
         });
         prd.save();
         console.log(prd);
@@ -47,4 +60,5 @@ const addProducts =  ( req,res) => {
 module.exports = {
     getAllProducts,
     addProducts,
+    getProduct,
 }

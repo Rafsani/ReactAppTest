@@ -9,7 +9,7 @@ class AddProductForm extends React.Component {
 
     constructor(props) {
         super(props);
-        this.state ={
+        this.state = {
             file: null,
             product_name: '',
             price:'',
@@ -40,27 +40,7 @@ class AddProductForm extends React.Component {
         formData.append('Description' , this.state.description);
         formData.append('ProductPrice',this.state.price);
         formData.append('ProductImage' , this.state.file);
-        // const Data = {
-        //     'ProductName': this.state.product_name,
-        //     'Description': this.state.description,
-        //     'ProductPrice':this.state.price,
-        // }
         
-    //     const config = {
-    //       headers: {
-    //           'content-type': 'multipart/form-data',
-              
-    //       }
-    //   };
-    //   axios.post("http://localhost:5000/api/upload",formData.getAll,config)
-    //       .then((response) => {
-    //           alert("The file is successfully uploaded");
-    //       }).catch((error) => {
-    //   });
-    // for (var pair of formData.entries()) {
-    //     console.log(pair[0]+ ', ' + pair[1]); 
-    // }
-     //   console.log(Data);
     axios({
         method: 'post',
         url: 'http://localhost:5000/api/upload',

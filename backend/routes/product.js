@@ -17,10 +17,7 @@ const upload = multer({storage:storage});
 
 router.get('/' , productController.getAllProducts);
 
-router.get('/:id', (req,res) => {
-    console.log("fiwgefufbwf");
-
-});
+router.get('/product/:id', productController.getProduct);
 
 router.post('/upload',upload.single('ProductImage'),  productController.addProducts )
 

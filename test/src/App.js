@@ -3,8 +3,9 @@ import NavBar from "./components/header";
 import {BrowserRouter as Router, Route} from "react-router-dom";
 import Product from "./components/product";
 import AddProductForm from "./components/AddProductForm"
-
+import Login from "./components/login";
 import Cards from "./components/Cards";
+import SignUp from "./components/SignUp";
 import "./App.css";
  
 class App extends Component {
@@ -25,20 +26,11 @@ class App extends Component {
       />
         
 
-      <Route path="/product/" exact render = { (props) => (
-        <>
-          <Product />
-        </>
+  
 
-      ) } />
-
-
-<Route path="/product/:id" exact render = { (props) => (
-        <>
-          <Product />
-        </>
-
-      ) } />
+      <Route name="product" path='/product/:id' component={Product} />
+      <Route name="login" path='/login' component={Login} />
+      <Route name="login" path='/signup' component={SignUp} />
 
 
       <Route path = "/upload" exact render = { (props) => (
